@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import reactDom, {render} from 'react-dom';
-import request from 'then-request';
+import {getJSON} from './util';
 
 class App extends Component {
     render() {
@@ -24,24 +24,25 @@ class Menu extends Component {
         super(props);
         this.state = {menu: []};
     }
+    
     componentDidMount() {
         this.Menu();
     }
 
     Menu() {
-         return request('GET', 'http://localhost:3000/menus')
-           .done((data) => {
-             //this.setState({ menu: JSON.parse(data.getBody())});
-            this.setState({menu: [{title: "hello", body: data.getBody()}]});
-           });
+        getJSON('/menus', (json) => {
+            this.setState({menu: json});
+        });
     }
+
     render() {
         const menus = this.state.menu.map((item, i) => {
-             return <div>
+             return <div key={item.id}>
                 <span> {item.title}</span>
                 <span> {item.body}</span>
              </div>
         });
+
         return <div>{ menus }</div>
     }
 }
