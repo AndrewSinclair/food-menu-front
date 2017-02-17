@@ -7,11 +7,11 @@ This is the food menu application front end to go with the API [here](https://gi
 
 To build the dev environment, run:
 
-    compile
+    npm run-script compile
 
 
 To run the Dev environment, run:
 
-    start
+    npm start
 
 Then connect on `http://localhost:8080/`
