@@ -17,8 +17,7 @@ module.exports = {
                 }
             }, {
                 test: /\.scss$/,
-                loaders: ["style-loader", "css-loader", "sass-loader"],
-                options: {sourceMap: true}
+                loaders: ["style-loader", "css-loader", "sass-loader"]
             }
         ]
     }
