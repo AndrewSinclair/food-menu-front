@@ -38,7 +38,7 @@ class App extends Component {
                         <Menu data={this.state.menu}/>
                         <Basket/>
                     </div>
-                  </MuiThemeProvider>
+               </MuiThemeProvider>
             </Provider>
     }
 }
