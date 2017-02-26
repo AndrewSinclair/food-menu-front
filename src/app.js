@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
 import reactDom, {render} from 'react-dom';
- import injectTapEventPlugin from 'react-tap-event-plugin';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Provider } from 'react-redux'
+import { createStore  } from 'redux'
+import menuApp from './reducers';
 import Header from './header';
 import Basket from './basket';
 import Menu from './menu';
 
 require('../sass/app.scss');
 injectTapEventPlugin();
+
+let store = createStore(menuApp);
 
 class App extends Component {
     constructor() {
@@ -26,15 +31,17 @@ class App extends Component {
     }
 
     render() {
-        return <MuiThemeProvider>
-                <div>
-                    <Header title="Wing's Restaurant" rating="3" address={this.state.address}/>
-                    <Menu data={this.state.menu}/>
-                    <Basket/>
-                </div>
-              </MuiThemeProvider>
+        return <Provider store={store}>
+                <MuiThemeProvider>
+                    <div>
+                        <Header title="Wing's Restaurant" rating="3" address={this.state.address}/>
+                        <Menu data={this.state.menu}/>
+                        <Basket/>
+                    </div>
+                  </MuiThemeProvider>
+            </Provider>
     }
 }
 
-
 render(<App/>, document.getElementById("app"));
+
