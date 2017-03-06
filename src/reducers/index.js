@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_TO_BASKET } from './actions';
+import { ADD_TO_BASKET } from '../actions';
 
 function basketItems(state = [], action) {
     switch (action.type) {
@@ -10,6 +10,7 @@ function basketItems(state = [], action) {
                     text: action.text
                 }
             ]
+
         default:
             return state
     }
@@ -20,4 +21,3 @@ const menuApp = combineReducers({
 })
 
 export default menuApp
-
