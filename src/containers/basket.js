@@ -3,13 +3,16 @@ import { connect } from 'react-redux'
 import Basket from '../components/basket'
 
 const mapStateToProps = (state={basketItems: []}, ownProps) => {
-    return {
-        basket: state.basketItems
-    }
+  return {
+    basket: state.basketItems
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { }
+  return { }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Basket)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Basket)
