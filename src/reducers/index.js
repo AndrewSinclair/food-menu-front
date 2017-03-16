@@ -16,7 +16,7 @@ function basketItems(state = [], action) {
   }
 }
 
-function header(state = [], action) {
+function login(state = [], action) {
   switch (action.type) {
     case LOGIN:
       return Object.assign({}, state, {
@@ -42,7 +42,7 @@ function header(state = [], action) {
 
 const menuApp = combineReducers({
   basketItems,
-  header,
+  login,
 })
 
 export default menuApp

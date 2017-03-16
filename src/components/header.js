@@ -9,7 +9,6 @@ class Header extends Component {
   }
 
   requireAuth(nextState, replace) {
-    //console.log(this.props.jwt)
     if (!this.props.jwt) {
       replace({
         pathname: '/',
@@ -22,7 +21,7 @@ class Header extends Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={Home} >
-          <Route path="/menu" component={Menu} onEnter={this.requireAuth.bind(this)} />
+          <Route path="/orders" component={Menu} onEnter={this.requireAuth.bind(this)} />
         </Route>
       </Router>
     )

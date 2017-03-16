@@ -19,3 +19,26 @@ export function errorLogin(errorMsg) {
 export function successLogin(jwt) {
   return { type: SUCCESS_LOGIN, jwt }
 }
+
+export function fetchLogin(userCreds) {
+  return function(dispatch) {
+    dispatch(beginLogin())
+
+    const headers = new Headers({ 'Content-Type': 'application/json' })
+
+    return fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers,
+        body: JSON.stringify(userCreds)
+      })
+      .then(response =>  {
+        if (!response.ok) {
+            throw Error(response.statusText)
+        }
+        return response
+      })
+      .then(response => response.json())
+      .then(json => dispatch(successLogin(json)))
+      .catch(error => dispatch(errorLogin(error)))
+  }
+}

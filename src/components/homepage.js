@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
+import LoginWidget from '../containers/LoginWidget'
 
 class HomePage extends Component {
   constructor(props) {
@@ -13,10 +14,11 @@ class HomePage extends Component {
           <Link to="/">
             Home
           </Link>
-          <Link to="/menu">
-            Menu
+          <Link to="/orders">
+            Orders
           </Link>
         </p>
+        <LoginWidget />
 
         {this.props.children}
       </div>
