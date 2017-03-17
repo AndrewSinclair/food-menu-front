@@ -17,7 +17,12 @@ class Menu extends Component {
       )
     })
 
-    return <div>{ menus }</div>
+    return (
+      <div>
+        <div> Famous Frank's </div>
+        { menus }
+      </div>
+    )
   }
 }
 

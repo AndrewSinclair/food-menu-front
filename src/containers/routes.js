@@ -1,16 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Header from '../components/header'
+import Routes from '../components/routes'
 
 const mapStateToProps = (state={login: {}}, ownProps) => {
   return { jwt: state.login.jwt }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return { }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Header)
+)(Routes)

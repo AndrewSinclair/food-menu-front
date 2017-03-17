@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import HomePage from '../components/homepage'
+import Layout from '../components/layout'
 
 const mapStateToProps = (state={ }, ownProps) => {
   return { }
@@ -13,4 +13,6 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage)
+)(Layout)
+
+

@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import menuApp from './reducers'
-import Header from './containers/header'
+import Routes from './containers/routes'
 
 const loggerMiddleware = createLogger()
 
@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <Provider store={this.store}>
         <MuiThemeProvider>
-          <Header />
+          <Routes />
         </MuiThemeProvider>
       </Provider>
     )

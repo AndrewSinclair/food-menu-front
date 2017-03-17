@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import Layout from '../containers/layout'
 import Home from '../containers/home'
 import Menu from '../containers/menu'
 
@@ -20,7 +21,8 @@ class Header extends Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={Home} >
+        <Route path="/" component={Layout}>
+          <IndexRoute component={Home} />
           <Route path="/orders" component={Menu} onEnter={this.requireAuth.bind(this)} />
         </Route>
       </Router>
