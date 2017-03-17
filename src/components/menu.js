@@ -4,10 +4,15 @@ import RaisedButton from 'material-ui/RaisedButton'
 class Menu extends Component {
   constructor(props) {
     super(props)
+    this.data = []
+  }
+
+  componentWillMount() {
+    this.data = this.props.fetchMenuData()
   }
 
   render() {
-    const menus = this.props.data.map((item, i) => {
+    const menus = this.data.map((item, i) => {
       (
         <div key={item.id}>
           <span>{item.title}</span>
@@ -19,7 +24,7 @@ class Menu extends Component {
 
     return (
       <div>
-        <div> Famous Frank's </div>
+        <div> Famous Franks </div>
         { menus }
       </div>
     )

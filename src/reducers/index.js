@@ -16,7 +16,31 @@ function basketItems(state = [], action) {
   }
 }
 
-function login(state = [], action) {
+function menuLoading(state = {}, action) {
+  switch (action.type) {
+    case MENU_LOADING:
+      return Object.assign({}, state, {
+        isMenuLoading: true
+      })
+
+    case SUCCESS_MENU_LOADING:
+      return Object.assign({}, state, {
+        isMenuLoading: false,
+        data: action.data
+      })
+
+    case ERROR_MENU_LOADING:
+      return Object.assign({}, state, {
+        isMenuLoading: false,
+        error: action.error
+      })
+
+    default:
+      return state
+  }
+}
+
+function login(state = {}, action) {
   switch (action.type) {
     case LOGIN:
       return Object.assign({}, state, {
