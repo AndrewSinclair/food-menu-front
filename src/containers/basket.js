@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Basket from '../components/basket'
 
-const mapStateToProps = (state={basketItems: []}, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     basket: state.basketItems
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
+import Basket from '../containers/basket'
 
 class Menu extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class Menu extends Component {
           <div key={item.id}>
             <span>{item.name}</span>
             <span>{item.description}</span>
-            <RaisedButton label="Add" onTouchTap={this.props.addToBasket}/>
+            <RaisedButton label="Add" onTouchTap={this.props.addToBasket.bind(this, item.id, item.name)}/>
           </div>
         )
       })
@@ -31,6 +32,7 @@ class Menu extends Component {
       <div>
         <div> Famous Franks </div>
         { menus }
+        <Basket />
       </div>
     )
   }

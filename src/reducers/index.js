@@ -7,9 +7,7 @@ function basketItems(state = [], action) {
     case ADD_TO_BASKET:
       return [
         ...state,
-        {
-          text: action.text
-        }
+        action.item
       ]
 
     default:

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { addToBasket, fetchMenuData } from '../actions'
 import Menu from '../components/menu'
 
-const mapStateToProps = (state={menuLoading: {data: [], isMenuLoading: true}}, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     data: state.menuLoading.data,
     isLoading: !!state.menuLoading.isMenuLoading
@@ -12,8 +12,8 @@ const mapStateToProps = (state={menuLoading: {data: [], isMenuLoading: true}}, o
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToBasket: (item) => {
-      dispatch(addToBasket(item))
+    addToBasket: (itemId, itemName) => {
+      dispatch(addToBasket(itemId, itemName))
     },
     fetchMenuData: () => {
       dispatch(fetchMenuData())

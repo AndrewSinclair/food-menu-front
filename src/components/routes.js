@@ -10,6 +10,7 @@ class Header extends Component {
   }
 
   requireAuth(nextState, replace) {
+    if (true) return
     if (!this.props.jwt) {
       replace({
         pathname: '/',

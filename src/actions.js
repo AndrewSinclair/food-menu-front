@@ -6,8 +6,8 @@ export const LOGIN = 'LOGIN'
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN'
 export const ERROR_LOGIN = 'ERROR_LOGIN'
 
-export function addToBasket(item) {
-  return {type: ADD_TO_BASKET, item }
+export function addToBasket(id, name) {
+  return {type: ADD_TO_BASKET, item: {id, name} }
 }
 
 export function beginMenuLoading() {

@@ -5,8 +5,7 @@ class Basket extends Component {
     const basketItems = this.props.basket.map((item, i) => {
       return (
         <div key={item.id}>
-          <span>{item.title}</span>
-          <span>{item.description}</span>
+          <span>{item.name}</span>
         </div>
       )
     })
