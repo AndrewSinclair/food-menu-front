@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import { ADD_TO_BASKET, LOGIN, SUCCESS_LOGIN, ERROR_LOGIN,
+import { ADD_TO_BASKET, REMOVE_FROM_BASKET,
+         LOGIN, SUCCESS_LOGIN, ERROR_LOGIN,
          MENU_LOADING, SUCCESS_MENU_LOADING, ERROR_MENU_LOADING } from '../actions'
 
 function basketItems(state = [], action) {
@@ -9,6 +10,11 @@ function basketItems(state = [], action) {
         ...state,
         action.item
       ]
+
+    case REMOVE_FROM_BASKET:
+      return state.filter(function(item) {
+        return item.id !== action.id
+      })
 
     default:
      return state

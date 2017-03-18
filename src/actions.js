@@ -1,4 +1,5 @@
 export const ADD_TO_BASKET = 'ADD_TO_BASKET'
+export const REMOVE_FROM_BASKET = 'REMOVE_FROM_BASKET'
 export const MENU_LOADING = 'MENU_LOADING'
 export const SUCCESS_MENU_LOADING = 'SUCCESS_MENU_LOADING'
 export const ERROR_MENU_LOADING = 'ERROR_MENU_LOADING'
@@ -8,6 +9,10 @@ export const ERROR_LOGIN = 'ERROR_LOGIN'
 
 export function addToBasket(id, name) {
   return {type: ADD_TO_BASKET, item: {id, name} }
+}
+
+export function removeFromBasket(id) {
+  return { type: REMOVE_FROM_BASKET, id }
 }
 
 export function beginMenuLoading() {
