@@ -3,12 +3,10 @@ import { connect } from 'react-redux'
 import { addToBasket, fetchMenuData } from '../actions'
 import Menu from '../components/menu'
 
-const mapStateToProps = (state={menuLoading: {}}, ownProps) => {
-  console.log("test")
-  console.log(state)
+const mapStateToProps = (state={menuLoading: {data: [], isMenuLoading: true}}, ownProps) => {
   return {
     data: state.menuLoading.data,
-    isLoading: state.menuLoading.isMenuLoading
+    isLoading: !!state.menuLoading.isMenuLoading
   }
 }
 

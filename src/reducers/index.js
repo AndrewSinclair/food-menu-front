@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import { ADD_TO_BASKET, LOGIN, SUCCESS_LOGIN, ERROR_LOGIN } from '../actions'
+import { ADD_TO_BASKET, LOGIN, SUCCESS_LOGIN, ERROR_LOGIN,
+         MENU_LOADING, SUCCESS_MENU_LOADING, ERROR_MENU_LOADING } from '../actions'
 
 function basketItems(state = [], action) {
   switch (action.type) {
@@ -16,7 +17,7 @@ function basketItems(state = [], action) {
   }
 }
 
-function menuLoading(state = {}, action) {
+function menuLoading(state={isMenuLoading: true, data: []}, action) {
   switch (action.type) {
     case MENU_LOADING:
       return Object.assign({}, state, {
@@ -66,6 +67,7 @@ function login(state = {}, action) {
 
 const menuApp = combineReducers({
   basketItems,
+  menuLoading,
   login,
 })
 
