@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
-import LoginWidget from '../containers/LoginWidget'
-import Footer from '../components/Footer'
+import LoginWidget from '../containers/loginwidget'
+import Footer from '../components/footer'
 
 class Layout extends Component {
   constructor(props) {
