@@ -19,18 +19,22 @@ class Menu extends Component {
     } else {
       menus = this.props.data.map((item, i) => {
         return (
-          <div key={item.id}>
+          <ul className="menu" key={item.id}>
+            <li>
             <span>{item.name}</span>
             <span>{item.description}</span>
+            <span>
             <RaisedButton label="Add" onTouchTap={this.props.addToBasket.bind(this, item.id, item.name)}/>
-          </div>
+            </span>
+            </li>
+          </ul>
         )
       })
     }
 
     return (
       <div>
-        <div> Famous Franks </div>
+        <h1> Famous Franks </h1>
         { menus }
         <Basket />
       </div>
