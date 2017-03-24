@@ -1,3 +1,60 @@
+body{
+    font-family:sans-serif;
+}
 .header {
     background-color: #FF0;
+}
+ul.nav{
+    list-style: none;
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+
+    li{ 
+        float: left; 
+    }
+
+    li a{
+        display: block;
+        text-align: center;
+        padding: 16px;
+        color : white;
+        text-decoration: none;
+    }
+
+    li a:hover{
+        background: silver;
+        color: black;
+    }
+}
+.menu {
+    list-style: none;
+}
+.basket{
+    display: inline-block;
+    list-style: none;
+}
+.basket> li > span,
+.menu > li > span{
+    min-width: 150px;
+    display:inline-block;
+    padding:20px;
+}
+.menu li.login{
+    float: right;
+    div{
+        padding:16px;
+    }
+}
+footer{ 
+    padding: 16px;
+    color: silver;
+    background-color:black;
+}
+div.home{
+    height: 300px;
+    padding-left: 50px;
+    padding-top: 50px;
+    font: 33px Arial Black;
 }

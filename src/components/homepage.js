@@ -8,7 +8,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div> Tasty Food Awaits You! </div>
+      <div className="home"> Tasty Food Awaits You! </div>
     )
   }
 }

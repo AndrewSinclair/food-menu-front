@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
-import LoginWidget from '../containers/LoginWidget'
-import Footer from '../components/Footer'
+import LoginWidget from '../containers/loginwidget'
+import Footer from '../components/footer'
 
 class Layout extends Component {
   constructor(props) {
@@ -10,16 +10,22 @@ class Layout extends Component {
 
   render() {
     return (
-      <div>
-        <p>
+      <div className="menu">
+        <ul className="nav">
+            <li>
           <Link to="/">
             Home
           </Link>
+            </li>
+            <li>
           <Link to="/orders">
             Orders
           </Link>
-        </p>
-        <LoginWidget />
+            </li>
+            <li className="login">
+                <LoginWidget />
+            </li>
+        </ul>
 
         {this.props.children}
 

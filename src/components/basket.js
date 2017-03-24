@@ -6,14 +6,14 @@ class Basket extends Component {
   render() {
     const basketItems = this.props.basket.map((item, i) => {
       return (
-        <div key={item.id}>
+        <li key={item.id}>
           <span>{item.name}</span>
           <RaisedButton label="Remove" onTouchTap={this.props.removeFromBasket.bind(this, item.id) } />
-        </div>
+        </li>
       )
     })
 
-    return <div>{ basketItems }</div>
+    return <ul className="basket">{ basketItems }</ul>
   }
 }
 
